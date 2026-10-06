@@ -1,53 +1,52 @@
 import { KartyaAdatok } from "./adatok.ts";
- 
+
 const adatokokTomb: KartyaAdatok[] = [];
- 
+
 fetch('https://petrik-utazas-default-rtdb.europe-west1.firebasedatabase.app/travelDestinations.json')
 
-.then(function(response) {
+  .then(function (response) {
 
     return response.json();
 
-})
+  })
 
-.then(function(data) {
+  .then(function (data) {
 
-    data.forEach(function(item: { title: string; content: string; img: string; }) {
+    data.forEach(function (item: { title: string; content: string; img: string; }) {
 
-        adatokokTomb.push(new KartyaAdatok(item.title, item.content, item.img));
+      adatokokTomb.push(new KartyaAdatok(item.title, item.content, item.img));
 
     });
 
     LoadCards();
 
-});
- 
-function LoadCards(){
+  });
 
-const cardContainer = document.getElementById('card-container');
+function LoadCards() {
 
-    if (!cardContainer) {
+  const cardContainer = document.getElementById('card-container');
 
-        return;
+  if (!cardContainer) {
 
-    }
- 
-    adatokokTomb.forEach(function(adat) {
+    return;
 
-        const card = document.createElement('div');
+  }
 
-        card.classList.add('card');
+  adatokokTomb.forEach(function (adat) {
 
-        card.innerHTML = `
+    const card = document.createElement('div');
+
+    card.classList.add('card');
+
+    card.innerHTML = `
 <img src="${adat.img}" alt="${adat.title}">
 <h2>${adat.title}</h2>
 <p>${adat.content}</p>
 
         `;
 
-        cardContainer.appendChild(card);
+    cardContainer.appendChild(card);
 
-    });
+  });
 
 }
- 
