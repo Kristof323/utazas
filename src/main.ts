@@ -28,4 +28,5 @@ addEventListener('DOMContentLoaded', function() {
         `;
         cardContainer.appendChild(card);
     });
+    
 });
