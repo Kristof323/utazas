@@ -4,91 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Utazási ajánlatok</title>
-  <style>
-    #card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    .card {
-      overflow: hidden;
-      border-radius: 10px;
-      background: white;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .card img {
-      display: block;
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 16px;
-    }
-
-    .card h2 {
-      margin-top: 0;
-    }
-
-    .price {
-      font-weight: bold;
-      color: #087f5b;
-    }
-  </style>
 </head>
 <body>
   
 
 <div id="card-container">
   <!-- A kártyák ide kerülnek a JavaScript segítségével --  -->
+
 </div>
 
-<script>
-  const utazasok = [
-    {
-      nev: "Párizsi városnézés",
-      helyszin: "Párizs, Franciaország",
-      leiras: "Fedezd fel az Eiffel-tornyot és a romantikus város nevezetességeit!",
-      ar: 189900,
-      kep: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      nev: "Görög tengerparti pihenés",
-      helyszin: "Kréta, Görögország",
-      leiras: "Élvezd a napsütést, a kristálytiszta tengert és a mediterrán ízeket!",
-      ar: 249900,
-      kep: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      nev: "Alpesi kaland",
-      helyszin: "Innsbruck, Ausztria",
-      leiras: "Kirándulás lenyűgöző hegyek és festői alpesi tájak között.",
-      ar: 159900,
-      kep: "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=600&q=80"
-    }
-  ];
-
-  const container = document.getElementById("card-container");
-
-  utazasok.forEach(utazas => {
-    container.innerHTML += `
-      <article class="card">
-        <img src="${utazas.kep}" alt="${utazas.helyszin}">
-        <div class="card-content">
-          <h2>${utazas.nev}</h2>
-          <p><strong>Úti cél:</strong> ${utazas.helyszin}</p>
-          <p>${utazas.leiras}</p>
-          <p class="price">${utazas.ar.toLocaleString("hu-HU")} Ft/fő</p>
-        </div>
-      </article>`;
-  });
-</script>
 
 </body>
 </html>
